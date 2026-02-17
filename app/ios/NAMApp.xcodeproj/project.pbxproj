@@ -1,0 +1,393 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		312083421195CD7DA24ACFA5 /* lstm.nam in Resources */ = {isa = PBXBuildFile; fileRef = F297FCB4505AB1A00728D14F /* lstm.nam */; };
+		5242731376E1C712E8AEC218 /* NAMBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE78C8FAA6735F4AD789BEE0 /* NAMBridge.mm */; };
+		76623271C62F3FA484921621 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04F5C05AD03F87DD39FD5B1 /* AudioEngine.swift */; };
+		88911C63C1D71A5F7904BB41 /* wavenet.nam in Resources */ = {isa = PBXBuildFile; fileRef = F63BA0B2F8BD26F7DE73E581 /* wavenet.nam */; };
+		B13C0B7F7CEC1E3F685E7374 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D46F38E519F84ED0CFDAD /* ContentView.swift */; };
+		BADEEDCF91295F4FFC6D5CBF /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7BA4FE09FF7676D58913B /* App.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		55E7BA4FE09FF7676D58913B /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		66CEA833F48F56E024B949AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		67BEEBF9751CEB0FC3A337A0 /* NAMApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NAMApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A04F5C05AD03F87DD39FD5B1 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
+		CE78C8FAA6735F4AD789BEE0 /* NAMBridge.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NAMBridge.mm; sourceTree = "<group>"; };
+		CE7D46F38E519F84ED0CFDAD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D6E9FB297446D7BDA4D151E5 /* NAMApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NAMApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		EFBA880292372BF2471171E3 /* NAMBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAMBridge.h; sourceTree = "<group>"; };
+		F297FCB4505AB1A00728D14F /* lstm.nam */ = {isa = PBXFileReference; lastKnownFileType = text; path = lstm.nam; sourceTree = "<group>"; };
+		F63BA0B2F8BD26F7DE73E581 /* wavenet.nam */ = {isa = PBXFileReference; lastKnownFileType = text; path = wavenet.nam; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		2FB6111487F561821EABC873 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F297FCB4505AB1A00728D14F /* lstm.nam */,
+				F63BA0B2F8BD26F7DE73E581 /* wavenet.nam */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3B620B939AD8EB2368BE0E89 = {
+			isa = PBXGroup;
+			children = (
+				8EE17603C77498AFAEC900B7 /* NAMApp */,
+				2FB6111487F561821EABC873 /* Resources */,
+				B5286253786F22C151FB66A7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8EE17603C77498AFAEC900B7 /* NAMApp */ = {
+			isa = PBXGroup;
+			children = (
+				55E7BA4FE09FF7676D58913B /* App.swift */,
+				A04F5C05AD03F87DD39FD5B1 /* AudioEngine.swift */,
+				CE7D46F38E519F84ED0CFDAD /* ContentView.swift */,
+				66CEA833F48F56E024B949AE /* Info.plist */,
+				D6E9FB297446D7BDA4D151E5 /* NAMApp-Bridging-Header.h */,
+				EFBA880292372BF2471171E3 /* NAMBridge.h */,
+				CE78C8FAA6735F4AD789BEE0 /* NAMBridge.mm */,
+			);
+			path = NAMApp;
+			sourceTree = "<group>";
+		};
+		B5286253786F22C151FB66A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67BEEBF9751CEB0FC3A337A0 /* NAMApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F55B5CF006C22587BD7D1B3 /* NAMApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4DBC72CE91CC48DF7FB8F59 /* Build configuration list for PBXNativeTarget "NAMApp" */;
+			buildPhases = (
+				E2948A1E9F8213E64A0C312F /* Sources */,
+				F0F3F59D7125E504479B9CA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NAMApp;
+			packageProductDependencies = (
+			);
+			productName = NAMApp;
+			productReference = 67BEEBF9751CEB0FC3A337A0 /* NAMApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0FF44DC2D5D98ACE540A7E16 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					4F55B5CF006C22587BD7D1B3 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B018363F7503E623151C32A9 /* Build configuration list for PBXProject "NAMApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 3B620B939AD8EB2368BE0E89;
+			minimizedProjectReferenceProxies = 1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F55B5CF006C22587BD7D1B3 /* NAMApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0F3F59D7125E504479B9CA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				312083421195CD7DA24ACFA5 /* lstm.nam in Resources */,
+				88911C63C1D71A5F7904BB41 /* wavenet.nam in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2948A1E9F8213E64A0C312F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BADEEDCF91295F4FFC6D5CBF /* App.swift in Sources */,
+				76623271C62F3FA484921621 /* AudioEngine.swift in Sources */,
+				B13C0B7F7CEC1E3F685E7374 /* ContentView.swift in Sources */,
+				5242731376E1C712E8AEC218 /* NAMBridge.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1EE6AACA6B84D491F9D565B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C6VMUWFDLM;
+				ENABLE_BITCODE = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"NAM_SAMPLE_FLOAT=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					../../,
+					../../Dependencies/eigen,
+					../../Dependencies/nlohmann,
+				);
+				INFOPLIST_FILE = NAMApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = (
+					"$(inherited)",
+					../../build_ios,
+				);
+				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = (
+					"$(inherited)",
+					../../build_sim,
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(PROJECT_DIR)/../../build_sim/libNAM.a",
+				);
+				"OTHER_LDFLAGS[sdk=iphoneos*]" = (
+					"-force_load",
+					"$(PROJECT_DIR)/../../build_ios/libNAM.a",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.neuralampmodeler.NAMApp;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "NAMApp/NAMApp-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		778FF27C955415BFC5E7B09C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C74A539CD63C56F03BE63A5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F21F8A5499A14878C11D6956 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C6VMUWFDLM;
+				ENABLE_BITCODE = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"NAM_SAMPLE_FLOAT=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					../../,
+					../../Dependencies/eigen,
+					../../Dependencies/nlohmann,
+				);
+				INFOPLIST_FILE = NAMApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = (
+					"$(inherited)",
+					../../build_ios,
+				);
+				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = (
+					"$(inherited)",
+					../../build_sim,
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(PROJECT_DIR)/../../build_sim/libNAM.a",
+				);
+				"OTHER_LDFLAGS[sdk=iphoneos*]" = (
+					"-force_load",
+					"$(PROJECT_DIR)/../../build_ios/libNAM.a",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.neuralampmodeler.NAMApp;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "NAMApp/NAMApp-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B018363F7503E623151C32A9 /* Build configuration list for PBXProject "NAMApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				778FF27C955415BFC5E7B09C /* Debug */,
+				C74A539CD63C56F03BE63A5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B4DBC72CE91CC48DF7FB8F59 /* Build configuration list for PBXNativeTarget "NAMApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F21F8A5499A14878C11D6956 /* Debug */,
+				1EE6AACA6B84D491F9D565B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0FF44DC2D5D98ACE540A7E16 /* Project object */;
+}

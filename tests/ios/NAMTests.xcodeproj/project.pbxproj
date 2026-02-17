@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D394988FD32FEC92718DDAB /* wavenet.nam in Resources */ = {isa = PBXBuildFile; fileRef = 89E78DED70D460DD18D2CAE8 /* wavenet.nam */; };
+		254E1459E940B98212B599C7 /* NAMCoreTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 91949AF59050F93EE2C8A1C2 /* NAMCoreTests.mm */; };
+		4BDC73BEA1BC924419210EB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83158B820D7DD8CB36C18843 /* AppDelegate.swift */; };
+		62FE01B4C85F2536F094BFE9 /* lstm.nam in Resources */ = {isa = PBXBuildFile; fileRef = 3008E97625B0CA36D36FF120 /* lstm.nam */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		62C4382D9D080C3B4AC589C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C81847E0BED4AC2DB46CA53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 056B487E3137CBD2871BDFDC;
+			remoteInfo = NAMTestHost;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02374EC52D5E4FA415026B02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		131974E75DD35716E459D332 /* NAMTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = NAMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3008E97625B0CA36D36FF120 /* lstm.nam */ = {isa = PBXFileReference; path = lstm.nam; sourceTree = "<group>"; };
+		83158B820D7DD8CB36C18843 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		89E78DED70D460DD18D2CAE8 /* wavenet.nam */ = {isa = PBXFileReference; path = wavenet.nam; sourceTree = "<group>"; };
+		91949AF59050F93EE2C8A1C2 /* NAMCoreTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NAMCoreTests.mm; sourceTree = "<group>"; };
+		F8441AD4093BAD26A63A2494 /* NAMTestHost.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NAMTestHost.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC44BB3FA15F18CAFEADDDE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		2D0776EC7CCF787649D48747 = {
+			isa = PBXGroup;
+			children = (
+				F2C158B2D44E9D73BCB2B07E /* NAMTestHost */,
+				51528764E5A5716D8E430F4A /* NAMTests */,
+				7E124F91E0EF01DD690399FD /* Resources */,
+				678C9488C323FB599CF0B30C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		51528764E5A5716D8E430F4A /* NAMTests */ = {
+			isa = PBXGroup;
+			children = (
+				02374EC52D5E4FA415026B02 /* Info.plist */,
+				91949AF59050F93EE2C8A1C2 /* NAMCoreTests.mm */,
+			);
+			path = NAMTests;
+			sourceTree = "<group>";
+		};
+		678C9488C323FB599CF0B30C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8441AD4093BAD26A63A2494 /* NAMTestHost.app */,
+				131974E75DD35716E459D332 /* NAMTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E124F91E0EF01DD690399FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3008E97625B0CA36D36FF120 /* lstm.nam */,
+				89E78DED70D460DD18D2CAE8 /* wavenet.nam */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F2C158B2D44E9D73BCB2B07E /* NAMTestHost */ = {
+			isa = PBXGroup;
+			children = (
+				83158B820D7DD8CB36C18843 /* AppDelegate.swift */,
+				FC44BB3FA15F18CAFEADDDE4 /* Info.plist */,
+			);
+			path = NAMTestHost;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		056B487E3137CBD2871BDFDC /* NAMTestHost */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13D93DB8D406D446A81AE9B9 /* Build configuration list for PBXNativeTarget "NAMTestHost" */;
+			buildPhases = (
+				B98F7F02E595CDF7C07F0366 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NAMTestHost;
+			packageProductDependencies = (
+			);
+			productName = NAMTestHost;
+			productReference = F8441AD4093BAD26A63A2494 /* NAMTestHost.app */;
+			productType = "com.apple.product-type.application";
+		};
+		81885E268AEF8FED87F7F986 /* NAMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0BE44DB6015561302618354 /* Build configuration list for PBXNativeTarget "NAMTests" */;
+			buildPhases = (
+				F801E8D8B6621B6D12DFA7E1 /* Sources */,
+				F5F1014ACE534B386E1EE40E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6DF4B7EA08339052EFA9973E /* PBXTargetDependency */,
+			);
+			name = NAMTests;
+			packageProductDependencies = (
+			);
+			productName = NAMTests;
+			productReference = 131974E75DD35716E459D332 /* NAMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C81847E0BED4AC2DB46CA53 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = D9F844BC934207EC78E99EA3 /* Build configuration list for PBXProject "NAMTests" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 2D0776EC7CCF787649D48747;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				056B487E3137CBD2871BDFDC /* NAMTestHost */,
+				81885E268AEF8FED87F7F986 /* NAMTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F5F1014ACE534B386E1EE40E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62FE01B4C85F2536F094BFE9 /* lstm.nam in Resources */,
+				1D394988FD32FEC92718DDAB /* wavenet.nam in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B98F7F02E595CDF7C07F0366 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BDC73BEA1BC924419210EB5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F801E8D8B6621B6D12DFA7E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				254E1459E940B98212B599C7 /* NAMCoreTests.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6DF4B7EA08339052EFA9973E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 056B487E3137CBD2871BDFDC /* NAMTestHost */;
+			targetProxy = 62C4382D9D080C3B4AC589C3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4DFEB995D60143C9B145E638 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = NAMTestHost/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nam.test.host;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		59A939399BBF9B4168C66CAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../",
+					"$(SRCROOT)/../../Dependencies/eigen",
+					"$(SRCROOT)/../../Dependencies/nlohmann",
+				);
+				INFOPLIST_FILE = NAMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/../../build_sim",
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(SRCROOT)/../../build_sim/libNAM.a",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nam.test.NAMTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NAMTestHost.app/NAMTestHost";
+			};
+			name = Release;
+		};
+		74425CBF24B96311433461FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		76567581FAD92685C55EFD87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../",
+					"$(SRCROOT)/../../Dependencies/eigen",
+					"$(SRCROOT)/../../Dependencies/nlohmann",
+				);
+				INFOPLIST_FILE = NAMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/../../build_sim",
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(SRCROOT)/../../build_sim/libNAM.a",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nam.test.NAMTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NAMTestHost.app/NAMTestHost";
+			};
+			name = Debug;
+		};
+		DAC57BE53E352CBCEB880EC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = NAMTestHost/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nam.test.host;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EC5CC5DD437890BF0F01B365 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13D93DB8D406D446A81AE9B9 /* Build configuration list for PBXNativeTarget "NAMTestHost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DFEB995D60143C9B145E638 /* Debug */,
+				DAC57BE53E352CBCEB880EC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B0BE44DB6015561302618354 /* Build configuration list for PBXNativeTarget "NAMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76567581FAD92685C55EFD87 /* Debug */,
+				59A939399BBF9B4168C66CAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D9F844BC934207EC78E99EA3 /* Build configuration list for PBXProject "NAMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74425CBF24B96311433461FF /* Debug */,
+				EC5CC5DD437890BF0F01B365 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8C81847E0BED4AC2DB46CA53 /* Project object */;
+}

@@ -1,0 +1,46 @@
+name: NAMApp
+options:
+  bundleIdPrefix: com.neuralampmodeler
+  deploymentTarget:
+    iOS: 17.0
+  developmentLanguage: en
+
+targets:
+  NAMApp:
+    type: application
+    platform: iOS
+    sources:
+      - path: NAMApp
+      - path: Resources/wavenet.nam
+        buildPhase: resources
+      - path: Resources/lstm.nam
+        buildPhase: resources
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.neuralampmodeler.NAMApp
+      INFOPLIST_FILE: NAMApp/Info.plist
+      SWIFT_OBJC_BRIDGING_HEADER: NAMApp/NAMApp-Bridging-Header.h
+      SWIFT_VERSION: "5.0"
+      CLANG_CXX_LANGUAGE_STANDARD: c++20
+      CLANG_CXX_LIBRARY: libc++
+      CODE_SIGN_STYLE: Automatic
+      DEVELOPMENT_TEAM: A3Z29EGCRZ
+      HEADER_SEARCH_PATHS:
+        - $(inherited)
+        - ../../
+        - ../../Dependencies/eigen
+        - ../../Dependencies/nlohmann
+      LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]:
+        - $(inherited)
+        - ../../build_sim
+      LIBRARY_SEARCH_PATHS[sdk=iphoneos*]:
+        - $(inherited)
+        - ../../build_ios
+      OTHER_LDFLAGS:
+        - -force_load $(PROJECT_DIR)/../../build_sim/libNAM.a
+      OTHER_LDFLAGS[sdk=iphoneos*]:
+        - -force_load $(PROJECT_DIR)/../../build_ios/libNAM.a
+      ENABLE_BITCODE: NO
+      GCC_PREPROCESSOR_DEFINITIONS:
+        - $(inherited)
+        - NAM_SAMPLE_FLOAT=1
+    dependencies: []

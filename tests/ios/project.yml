@@ -1,0 +1,44 @@
+name: NAMTests
+options:
+  bundleIdPrefix: com.nam.test
+  deploymentTarget:
+    iOS: "14.0"
+  xcodeVersion: "16.0"
+
+settings:
+  CLANG_CXX_LANGUAGE_STANDARD: c++20
+  CLANG_CXX_LIBRARY: libc++
+
+targets:
+  NAMTestHost:
+    type: application
+    platform: iOS
+    sources:
+      - NAMTestHost
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.nam.test.host
+
+  NAMTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - NAMTests
+      - path: Resources
+        buildPhase: resources
+    dependencies:
+      - target: NAMTestHost
+    settings:
+      TEST_HOST: "$(BUILT_PRODUCTS_DIR)/NAMTestHost.app/NAMTestHost"
+      BUNDLE_LOADER: "$(TEST_HOST)"
+      HEADER_SEARCH_PATHS:
+        - "$(SRCROOT)/../../"
+        - "$(SRCROOT)/../../Dependencies/eigen"
+        - "$(SRCROOT)/../../Dependencies/nlohmann"
+      LIBRARY_SEARCH_PATHS:
+        - "$(SRCROOT)/../../build_sim"
+      OTHER_LDFLAGS:
+        - "-force_load"
+        - "$(SRCROOT)/../../build_sim/libNAM.a"
+        - "-lc++"
+      CLANG_CXX_LANGUAGE_STANDARD: c++20
+      CLANG_CXX_LIBRARY: libc++
