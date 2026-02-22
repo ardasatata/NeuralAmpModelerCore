@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    private let bridge: NAMBridge
+    private let resamplingBridge: ResamplingBridge
     @StateObject private var audioEngine: AudioEngine
 
     @State private var selectedModel: ModelType = .wavenet
@@ -14,19 +14,24 @@ struct ContentView: View {
     enum ModelType: String, CaseIterable {
         case wavenet = "Wavenet"
         case lstm = "LSTM"
+        case my_model = "My Model"
+        case petrucci_main_lead = "Main Lead Petrucci"
 
         var filename: String {
             switch self {
             case .wavenet: return "wavenet"
             case .lstm: return "lstm"
+            case .my_model: return "my_model"
+            case .petrucci_main_lead: return "petrucci_main_lead"
             }
         }
     }
 
     init() {
         let bridge = NAMBridge()
-        self.bridge = bridge
-        _audioEngine = StateObject(wrappedValue: AudioEngine(bridge: bridge))
+        let resamplingBridge = ResamplingBridge(bridge: bridge)
+        self.resamplingBridge = resamplingBridge
+        _audioEngine = StateObject(wrappedValue: AudioEngine(resamplingBridge: resamplingBridge))
     }
 
     var body: some View {
@@ -60,7 +65,7 @@ struct ContentView: View {
                 Section(header: Text("Audio")) {
                     Toggle("Bypass", isOn: $bypass)
                         .onChange(of: bypass) { newValue in
-                            bridge.setBypass(newValue)
+                            resamplingBridge.setBypass(newValue)
                         }
 
                     Toggle("Processing", isOn: Binding(
@@ -82,24 +87,24 @@ struct ContentView: View {
                 Section(header: Text("Input Gain (\(String(format: "%.1f", inputGain)) dB)")) {
                     Slider(value: $inputGain, in: -12...12, step: 0.5)
                         .onChange(of: inputGain) { newValue in
-                            bridge.setInputGain(newValue)
+                            resamplingBridge.setInputGain(newValue)
                         }
 
                     Button("Reset") {
                         inputGain = 0.0
-                        bridge.setInputGain(0.0)
+                        resamplingBridge.setInputGain(0.0)
                     }
                 }
 
                 Section(header: Text("Output Gain (\(String(format: "%.1f", outputGain)) dB)")) {
                     Slider(value: $outputGain, in: -12...12, step: 0.5)
                         .onChange(of: outputGain) { newValue in
-                            bridge.setOutputGain(newValue)
+                            resamplingBridge.setOutputGain(newValue)
                         }
 
                     Button("Reset") {
                         outputGain = 0.0
-                        bridge.setOutputGain(0.0)
+                        resamplingBridge.setOutputGain(0.0)
                     }
                 }
 
@@ -108,8 +113,8 @@ struct ContentView: View {
                         HStack {
                             Text("Model:")
                             Spacer()
-                            Text(bridge.modelName ?? "None")
-                                .foregroundColor(bridge.isModelLoaded ? .green : .red)
+                            Text(resamplingBridge.modelName ?? "None")
+                                .foregroundColor(resamplingBridge.isModelLoaded ? .green : .red)
                         }
 
                         HStack {
@@ -155,7 +160,7 @@ struct ContentView: View {
             }
 
             do {
-                try bridge.loadModel(modelPath)
+                try resamplingBridge.loadModel(modelPath)
                 DispatchQueue.main.async {
                     isLoading = false
                     statusMessage = "Loaded \(modelType.rawValue) successfully"

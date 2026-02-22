@@ -45,6 +45,16 @@
     return _dsp.load(std::memory_order_acquire) != nullptr;
 }
 
+- (double)modelSampleRate {
+    nam::DSP* dsp = _dsp.load(std::memory_order_acquire);
+    if (dsp) {
+        double sr = dsp->GetExpectedSampleRate();
+        // If model doesn't know its sample rate, assume 48kHz (most common)
+        return sr > 0.0 ? sr : 48000.0;
+    }
+    return -1.0;
+}
+
 - (BOOL)loadModel:(NSString *)path error:(NSError **)error {
     @try {
         // Load the model on a background thread
@@ -98,6 +108,13 @@
 - (void)processInput:(const float *)input output:(float *)output frameCount:(int)frameCount {
     nam::DSP* dsp = _dsp.load(std::memory_order_acquire);
 
+    // Debug logging (remove after debugging)
+    static int logCounter = 0;
+    if (++logCounter % 100 == 0) {
+        NSLog(@"🎸 processInput: dsp=%p bypass=%d frames=%d bufSize=%zu",
+              dsp, _bypass, frameCount, _inputBuffer.size());
+    }
+
     // Bypass mode: just copy input to output
     if (_bypass || !dsp) {
         for (int i = 0; i < frameCount; i++) {
@@ -106,10 +123,11 @@
         return;
     }
 
-    // Ensure buffers are large enough (resize if needed)
+    // Safety check: ensure we don't exceed pre-allocated buffer size
     if (frameCount > _inputBuffer.size()) {
-        _inputBuffer.resize(frameCount);
-        _outputBuffer.resize(frameCount);
+        // This shouldn't happen if reset() was called properly
+        // Just process what we can fit
+        frameCount = static_cast<int>(_inputBuffer.size());
     }
 
     // Apply input gain and convert float -> NAM_SAMPLE (double or float depending on NAM_SAMPLE_FLOAT)
@@ -118,16 +136,36 @@
     }
 
     // Process through NAM
-    // Note: DSP::process expects double pointers (pointers to arrays of pointers)
-    // For mono processing, we just need a single pointer to our buffer
-    NAM_SAMPLE* inputPtr = _inputBuffer.data();
-    NAM_SAMPLE* outputPtr = _outputBuffer.data();
+    // DSP::process expects an ARRAY of channel pointers (for stereo support)
+    // For mono, we create arrays with a single pointer each
+    NAM_SAMPLE* inputChannels[1] = { _inputBuffer.data() };
+    NAM_SAMPLE* outputChannels[1] = { _outputBuffer.data() };
 
-    dsp->process(&inputPtr, &outputPtr, frameCount);
+    dsp->process(inputChannels, outputChannels, frameCount);
+
+    // Check for NaN/Inf and debug output levels
+    if (logCounter % 100 == 0) {
+        float inPeak = 0, outPeak = 0;
+        int nanCount = 0, infCount = 0;
+        for (int i = 0; i < frameCount; i++) {
+            inPeak = fmaxf(inPeak, fabsf(_inputBuffer[i]));
+            float val = static_cast<float>(_outputBuffer[i]);
+            if (std::isnan(val)) nanCount++;
+            if (std::isinf(val)) infCount++;
+            outPeak = fmaxf(outPeak, fabsf(val));
+        }
+        NSLog(@"Peaks: in=%.4f out=%.4f (NaN=%d Inf=%d)", inPeak, outPeak, nanCount, infCount);
+    }
 
     // Apply output gain and convert NAM_SAMPLE -> float
     for (int i = 0; i < frameCount; i++) {
-        output[i] = static_cast<float>(_outputBuffer[i] * _outputGainLinear);
+        float val = static_cast<float>(_outputBuffer[i] * _outputGainLinear);
+        // Clamp to prevent NaN/Inf from reaching output
+        if (std::isnan(val) || std::isinf(val)) {
+            output[i] = 0.0f;
+        } else {
+            output[i] = std::clamp(val, -1.0f, 1.0f);
+        }
     }
 }
 
@@ -138,11 +176,14 @@
     nam::DSP* dsp = _dsp.load(std::memory_order_acquire);
     if (dsp) {
         dsp->Reset(sampleRate, maxBufferSize);
+        // Prewarm the model to settle initial conditions
+        dsp->prewarm();
+        NSLog(@"✓ Reset & prewarmed DSP at %.0f Hz, buffer %d", sampleRate, maxBufferSize);
     }
 
-    // Resize conversion buffers
-    _inputBuffer.resize(maxBufferSize);
-    _outputBuffer.resize(maxBufferSize);
+    // Resize conversion buffers and zero them
+    _inputBuffer.resize(maxBufferSize, 0.0f);
+    _outputBuffer.resize(maxBufferSize, 0.0f);
 }
 
 - (void)setBypass:(BOOL)bypass {

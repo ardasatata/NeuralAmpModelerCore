@@ -10,11 +10,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED OFF)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Use libc++ on macOS, system default on Linux
-if (CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+if (CMAKE_SYSTEM_NAME STREQUAL "Darwin" OR CMAKE_SYSTEM_NAME STREQUAL "iOS")
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
 endif()
 
-if (CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+if (CMAKE_SYSTEM_NAME STREQUAL "Darwin" OR CMAKE_SYSTEM_NAME STREQUAL "iOS")
 	include_directories(SYSTEM /usr/local/include)
 elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
 	link_libraries(stdc++fs)
@@ -27,7 +27,23 @@ endif()
 set(NAM_DEPS_PATH "${CMAKE_CURRENT_SOURCE_DIR}/Dependencies")
 include_directories(SYSTEM "${NAM_DEPS_PATH}/eigen")
 
-add_subdirectory(tools)
+if (CMAKE_SYSTEM_NAME STREQUAL "iOS")
+	# For iOS, build NAM as a static library instead of command-line tools
+	file(GLOB_RECURSE NAM_SOURCES NAM/*.cpp NAM/*.c NAM/*.h)
+	add_library(NAM STATIC ${NAM_SOURCES})
+	target_include_directories(NAM PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+	target_include_directories(NAM SYSTEM PUBLIC
+		${NAM_DEPS_PATH}/eigen
+		${NAM_DEPS_PATH}/nlohmann
+	)
+	target_compile_features(NAM PUBLIC cxx_std_20)
+	set_target_properties(NAM PROPERTIES
+		CXX_VISIBILITY_PRESET hidden
+		INTERPROCEDURAL_OPTIMIZATION TRUE
+	)
+else()
+	add_subdirectory(tools)
+endif()
 
 #file(MAKE_DIRECTORY build/tools)
 

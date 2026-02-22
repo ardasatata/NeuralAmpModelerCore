@@ -35,3 +35,18 @@
 
 docs/_build/
 *.DS_Store
+
+# CMake build files
+build/CMakeCache.txt
+build/CMakeFiles/
+build/Makefile
+build/cmake_install.cmake
+build/tools/
+
+# Xcode user-specific files
+app/ios/NAMApp.xcodeproj/xcuserdata/
+app/ios/NAMApp.xcodeproj/project.xcworkspace/xcuserdata/
+
+# iOS build directories
+build_ios/
+build_sim/

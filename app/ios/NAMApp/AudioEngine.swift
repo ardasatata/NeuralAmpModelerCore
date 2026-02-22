@@ -3,16 +3,16 @@ import Accelerate
 
 /// Manages real-time audio I/O and processes audio through NAM
 class AudioEngine: ObservableObject {
-    private let bridge: NAMBridge
+    private let resamplingBridge: ResamplingBridge
     private var audioUnit: AUAudioUnit?
     private var auAudioUnit: AudioUnit?
 
     @Published var isRunning = false
     @Published var sampleRate: Double = 48000.0
-    @Published var bufferSize: Int = 256
+    @Published var bufferSize: Int = 128
 
-    init(bridge: NAMBridge) {
-        self.bridge = bridge
+    init(resamplingBridge: ResamplingBridge) {
+        self.resamplingBridge = resamplingBridge
         setupAudioSession()
     }
 
@@ -24,8 +24,11 @@ class AudioEngine: ObservableObject {
                                    mode: .default,
                                    options: [.defaultToSpeaker, .allowBluetoothA2DP])
 
-            // Request low latency (~5.8ms at 44.1kHz = 256 samples)
-            try session.setPreferredIOBufferDuration(256.0 / 44100.0)
+            // Request 48kHz to match most NAM models
+            try session.setPreferredSampleRate(48000.0)
+
+            // Request low latency (~5.3ms at 48kHz = 256 samples)
+            try session.setPreferredIOBufferDuration(256.0 / 48000.0)
 
             // Activate the session
             try session.setActive(true)
@@ -52,7 +55,7 @@ class AudioEngine: ObservableObject {
 
         // Reset NAM bridge with actual sample rate and buffer size
         let maxBufferSize = 4096
-        bridge.reset(withSampleRate: hardwareSampleRate, maxBufferSize: Int32(maxBufferSize))
+        resamplingBridge.reset(withSampleRate: hardwareSampleRate, maxBufferSize: Int32(maxBufferSize))
 
         // Create RemoteIO audio unit for pass-through processing
         var desc = AudioComponentDescription(
@@ -182,7 +185,7 @@ class AudioEngine: ObservableObject {
         }
 
         // Process through NAM
-        bridge.processInput(inputData, output: outputData, frameCount: Int32(inNumberFrames))
+        resamplingBridge.processInput(inputData, output: outputData, frameCount: Int32(inNumberFrames))
 
         return noErr
     }

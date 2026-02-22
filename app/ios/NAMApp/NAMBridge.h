@@ -40,6 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// Get the name of the currently loaded model (filename without extension)
 @property (nonatomic, readonly, copy, nullable) NSString *modelName;
 
+/// Get the expected sample rate of the loaded model (-1.0 if unknown)
+@property (nonatomic, readonly) double modelSampleRate;
+
 @end
 
 NS_ASSUME_NONNULL_END
