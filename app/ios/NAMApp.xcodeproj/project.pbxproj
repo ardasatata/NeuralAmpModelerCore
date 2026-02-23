@@ -13,9 +13,13 @@
 		88911C63C1D71A5F7904BB41 /* wavenet.nam in Resources */ = {isa = PBXBuildFile; fileRef = F63BA0B2F8BD26F7DE73E581 /* wavenet.nam */; };
 		B13C0B7F7CEC1E3F685E7374 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D46F38E519F84ED0CFDAD /* ContentView.swift */; };
 		BADEEDCF91295F4FFC6D5CBF /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7BA4FE09FF7676D58913B /* App.swift */; };
+		D8ED33D02F4B852C002D83F7 /* petrucci_main_lead.nam in Resources */ = {isa = PBXBuildFile; fileRef = D8ED33CF2F4B852C002D83F7 /* petrucci_main_lead.nam */; };
+		D8ED33D12F4B852C002D83F7 /* my_model.nam in Resources */ = {isa = PBXBuildFile; fileRef = D8ED33CE2F4B852C002D83F7 /* my_model.nam */; };
+		E61174D944BF157C106E3EF1 /* ResamplingBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153E022F1CF06FF6009A0350 /* ResamplingBridge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		153E022F1CF06FF6009A0350 /* ResamplingBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResamplingBridge.swift; sourceTree = "<group>"; };
 		55E7BA4FE09FF7676D58913B /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		66CEA833F48F56E024B949AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		67BEEBF9751CEB0FC3A337A0 /* NAMApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NAMApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -23,6 +27,8 @@
 		CE78C8FAA6735F4AD789BEE0 /* NAMBridge.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NAMBridge.mm; sourceTree = "<group>"; };
 		CE7D46F38E519F84ED0CFDAD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D6E9FB297446D7BDA4D151E5 /* NAMApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NAMApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		D8ED33CE2F4B852C002D83F7 /* my_model.nam */ = {isa = PBXFileReference; lastKnownFileType = text; path = my_model.nam; sourceTree = "<group>"; };
+		D8ED33CF2F4B852C002D83F7 /* petrucci_main_lead.nam */ = {isa = PBXFileReference; lastKnownFileType = text; path = petrucci_main_lead.nam; sourceTree = "<group>"; };
 		EFBA880292372BF2471171E3 /* NAMBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAMBridge.h; sourceTree = "<group>"; };
 		F297FCB4505AB1A00728D14F /* lstm.nam */ = {isa = PBXFileReference; lastKnownFileType = text; path = lstm.nam; sourceTree = "<group>"; };
 		F63BA0B2F8BD26F7DE73E581 /* wavenet.nam */ = {isa = PBXFileReference; lastKnownFileType = text; path = wavenet.nam; sourceTree = "<group>"; };
@@ -34,6 +40,8 @@
 			children = (
 				F297FCB4505AB1A00728D14F /* lstm.nam */,
 				F63BA0B2F8BD26F7DE73E581 /* wavenet.nam */,
+				D8ED33CE2F4B852C002D83F7 /* my_model.nam */,
+				D8ED33CF2F4B852C002D83F7 /* petrucci_main_lead.nam */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -57,6 +65,7 @@
 				D6E9FB297446D7BDA4D151E5 /* NAMApp-Bridging-Header.h */,
 				EFBA880292372BF2471171E3 /* NAMBridge.h */,
 				CE78C8FAA6735F4AD789BEE0 /* NAMBridge.mm */,
+				153E022F1CF06FF6009A0350 /* ResamplingBridge.swift */,
 			);
 			path = NAMApp;
 			sourceTree = "<group>";
@@ -129,6 +138,8 @@
 			files = (
 				312083421195CD7DA24ACFA5 /* lstm.nam in Resources */,
 				88911C63C1D71A5F7904BB41 /* wavenet.nam in Resources */,
+				D8ED33D02F4B852C002D83F7 /* petrucci_main_lead.nam in Resources */,
+				D8ED33D12F4B852C002D83F7 /* my_model.nam in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +154,7 @@
 				76623271C62F3FA484921621 /* AudioEngine.swift in Sources */,
 				B13C0B7F7CEC1E3F685E7374 /* ContentView.swift in Sources */,
 				5242731376E1C712E8AEC218 /* NAMBridge.mm in Sources */,
+				E61174D944BF157C106E3EF1 /* ResamplingBridge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,10 +171,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C6VMUWFDLM;
 				ENABLE_BITCODE = NO;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"NAM_SAMPLE_FLOAT=1",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					../../,
@@ -327,10 +336,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C6VMUWFDLM;
 				ENABLE_BITCODE = NO;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"NAM_SAMPLE_FLOAT=1",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					../../,

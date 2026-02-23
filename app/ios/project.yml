@@ -42,5 +42,4 @@ targets:
       ENABLE_BITCODE: NO
       GCC_PREPROCESSOR_DEFINITIONS:
         - $(inherited)
-        - NAM_SAMPLE_FLOAT=1
     dependencies: []
